@@ -20,7 +20,7 @@ if ($this->wantsHighlighting()) {
     <x-pulse::card-header
         name="{{ __('pulse.slow-queries.name') }}"
         x-bind:title="`Time: {{ number_format($time) }}ms; Run at: ${formatDate('{{ $runAt }}')};`"
-        details="{{ is_array($config['threshold']) ? '' : $config['threshold'].'ms threshold, ' }}past {{ $this->periodForHumans() }}"
+        details="{{ is_array($config['threshold']) ? '' : __('pulse.cad-header.details.threshold', ['threshold' => $config['threshold']]) }}past {{ $this->periodForHumans() }}"
     >
         <x-slot:icon>
             <x-pulse::icons.circle-stack />

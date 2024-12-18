@@ -2,7 +2,7 @@
     <x-pulse::card-header
         name="{{ __('pulse.slow-jobs.name') }}"
         x-bind:title="`Time: {{ number_format($time, 0) }}ms; Run at: ${formatDate('{{ $runAt }}')};`"
-        details="{{ is_array($config['threshold']) ? '' : $config['threshold'].'ms threshold, ' }}past {{ $this->periodForHumans() }}"
+        details="{{ is_array($config['threshold']) ? '' : __('pulse.cad-header.details.threshold', ['threshold' => $config['threshold']]) }}past {{ $this->periodForHumans() }}"
     >
         <x-slot:icon>
             <x-pulse::icons.command-line />

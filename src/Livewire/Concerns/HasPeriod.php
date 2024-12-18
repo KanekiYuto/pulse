@@ -34,10 +34,10 @@ trait HasPeriod
     public function periodForHumans(): string
     {
         return match ($this->period) {
-            '6_hours' => '6 hours',
-            '24_hours' => '24 hours',
-            '7_days' => '7 days',
-            default => 'hour',
+            '6_hours' => __('pulse.period.6_hours'),
+            '24_hours' => __('pulse.period.24_hours'),
+            '7_days' => __('pulse.period.7_days'),
+            default => __('pulse.period.default'),
         };
     }
 }

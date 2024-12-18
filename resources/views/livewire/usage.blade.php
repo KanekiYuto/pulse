@@ -7,7 +7,7 @@
             default => __('pulse.usage.name.default')
         }"
         x-bind:title="`Time: {{ number_format($time) }}ms; Run at: ${formatDate('{{ $runAt }}')};`"
-        details="{{ $this->usage === 'slow_requests' ? (is_array($slowRequestsConfig['threshold']) ? '' : $slowRequestsConfig['threshold'].'ms threshold, ') : '' }}past {{ $this->periodForHumans() }}"
+        details="{{ $this->usage === 'slow_requests' ? (is_array($slowRequestsConfig['threshold']) ? '' : __('pulse.cad-header.details.threshold', ['threshold' => $slowRequestsConfig['threshold']])) : '' }}past {{ $this->periodForHumans() }}"
     >
         <x-slot:icon>
             <x-dynamic-component :component="'pulse::icons.' . match ($this->type) {
