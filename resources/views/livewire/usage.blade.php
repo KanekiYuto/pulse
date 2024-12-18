@@ -1,10 +1,10 @@
 <x-pulse::card :cols="$cols" :rows="$rows" :class="$class">
     <x-pulse::card-header
         :name="match ($this->type) {
-            'requests' => 'Top 10 Users Making Requests',
-            'slow_requests' => 'Top 10 Users Experiencing Slow Endpoints',
-            'jobs' => 'Top 10 Users Dispatching Jobs',
-            default => 'Application Usage'
+            'requests' => __('pulse.usage.name.requests'),
+            'slow_requests' => __('pulse.usage.name.slow_requests'),
+            'jobs' => __('pulse.usage.name.jobs'),
+            default => __('pulse.usage.name.default')
         }"
         x-bind:title="`Time: {{ number_format($time) }}ms; Run at: ${formatDate('{{ $runAt }}')};`"
         details="{{ $this->usage === 'slow_requests' ? (is_array($slowRequestsConfig['threshold']) ? '' : $slowRequestsConfig['threshold'].'ms threshold, ') : '' }}past {{ $this->periodForHumans() }}"

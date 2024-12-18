@@ -32,11 +32,11 @@ $rows = ! empty($rows) ? $rows : 1;
         <div class="grid grid-cols-[max-content,minmax(max-content,1fr),max-content,minmax(min-content,2fr),max-content,minmax(min-content,2fr),minmax(max-content,1fr)]">
             <div></div>
             <div></div>
-            <div class="text-xs uppercase text-left text-gray-500 dark:text-gray-400 font-bold">CPU</div>
+            <div class="text-xs uppercase text-left text-gray-500 dark:text-gray-400 font-bold">{{ __('pulse.servers.cpu') }}</div>
             <div></div>
-            <div class="text-xs uppercase text-left text-gray-500 dark:text-gray-400 font-bold">Memory</div>
+            <div class="text-xs uppercase text-left text-gray-500 dark:text-gray-400 font-bold">{{ __('pulse.servers.memory') }}</div>
             <div></div>
-            <div class="text-xs uppercase text-left text-gray-500 dark:text-gray-400 font-bold">Storage</div>
+            <div class="text-xs uppercase text-left text-gray-500 dark:text-gray-400 font-bold">{{ __('pulse.servers.storage') }}</div>
             @foreach ($servers as $slug => $server)
                 <div wire:key="{{ $slug }}-indicator" class="flex items-center {{ $servers->count() > 1 ? 'py-2' : '' }}" title="{{ $server->updated_at->fromNow() }}">
                     @if ($server->recently_reported)

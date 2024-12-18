@@ -1,7 +1,7 @@
 @use('Illuminate\Support\Str')
 <x-pulse::card :cols="$cols" :rows="$rows" :class="$class">
     <x-pulse::card-header
-        name="Cache"
+        name="{{ __('pulse.cache.name') }}"
         x-bind:title="`Global Time: {{ number_format($allTime) }}ms; Global run at: ${formatDate('{{ $allRunAt }}')}; Key Time: {{ number_format($keyTime) }}ms; Key run at: ${formatDate('{{ $keyRunAt }}')};`"
         details="past {{ $this->periodForHumans() }}"
     >

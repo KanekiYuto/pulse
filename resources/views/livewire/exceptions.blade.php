@@ -1,6 +1,6 @@
 <x-pulse::card :cols="$cols" :rows="$rows" :class="$class">
     <x-pulse::card-header
-        name="Exceptions"
+        name="{{ __('pulse.exceptions.name') }}"
         x-bind:title="`Time: {{ number_format($time) }}ms; Run at: ${formatDate('{{ $runAt }}')};`"
         details="past {{ $this->periodForHumans() }}"
     >

@@ -1,7 +1,7 @@
 @use('Illuminate\Support\Str')
 <x-pulse::card :cols="$cols" :rows="$rows" :class="$class">
     <x-pulse::card-header
-        name="Queues"
+        name="{{ __('pulse.queues.name') }}"
         x-bind:title="`Time: {{ number_format($time) }}ms; Run at: ${formatDate('{{ $runAt }}')};`"
         details="past {{ $this->periodForHumans() }}"
     >
@@ -12,23 +12,23 @@
             <div class="flex flex-wrap gap-4">
                 <div class="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400 font-medium">
                     <div class="h-0.5 w-3 rounded-full bg-[rgba(107,114,128,0.5)]"></div>
-                    Queued
+                    {{ __('pulse.queues.actions.queued') }}
                 </div>
                 <div class="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400 font-medium">
                     <div class="h-0.5 w-3 rounded-full bg-[rgba(147,51,234,0.5)]"></div>
-                    Processing
+                    {{ __('pulse.queues.actions.processing') }}
                 </div>
                 <div class="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400 font-medium">
                     <div class="h-0.5 w-3 rounded-full bg-[#9333ea]"></div>
-                    Processed
+                    {{ __('pulse.queues.actions.processed') }}
                 </div>
                 <div class="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400 font-medium">
                     <div class="h-0.5 w-3 rounded-full bg-[#eab308]"></div>
-                    Released
+                    {{ __('pulse.queues.actions.released') }}
                 </div>
                 <div class="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-400 font-medium">
                     <div class="h-0.5 w-3 rounded-full bg-[#e11d48]"></div>
-                    Failed
+                    {{ __('pulse.queues.actions.failed') }}
                 </div>
             </div>
         </x-slot:actions>
